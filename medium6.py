@@ -9,8 +9,8 @@ from sklearn.metrics import accuracy_score, confusion_matrix, classification_rep
 
 df = pd.read_csv("heart.csv")
 
-categorical_cols = ['Sex', 'ChestPainType', 'RestingECG', 'ExerciseAngina', 'ST_Slope']
-df_encoded = pd.get_dummies(df, columns=categorical_cols, drop_first=True)
+categorical_columns = ['Sex', 'ChestPainType', 'RestingECG', 'ExerciseAngina', 'ST_Slope']
+df_encoded = pd.get_dummies(df, columns=categorical_columns, drop_first=True)
 
 X = df_encoded.drop('HeartDisease', axis=1)
 y = df_encoded['HeartDisease']
